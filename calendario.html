@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head> 
+    <link rel="shortcut icon" href="calen.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário rrb</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="header">
+            <button id="prevYear">&lt;&lt;</button>
+            <button id="prevMonth">&lt;</button>
+            <span id="monthYear"></span>
+            <button id="nextMonth">&gt;</button>
+            <button id="nextYear">&gt;&gt;</button>
+        </div>
+        <div class="calendar">
+            <div class="weekdays">
+                <div>Dom</div>
+                <div>Seg</div>
+                <div>Ter</div>
+                <div>Qua</div>
+                <div>Qui</div>
+                <div>Sex</div>
+                <div>Sáb</div>
+            </div>
+            <div id="days" class="days"></div>
+        </div>
+    </div>
+
+    <!-- Modal para Observações -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Adicionar Lembrete</h2>
+            <input type="text" id="dateInput" disabled>
+            <textarea id="noteInput" placeholder="Digite seu lembrete aqui..."></textarea>
+            <button id="saveNote">Salvar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

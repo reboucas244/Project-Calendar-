@@ -1,0 +1,198 @@
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden; /* Evita barras de rolagem ao mover o mouse */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s ease; /* Transição suave para o gradiente de fundo */
+}
+
+.calendar-container {
+    width: 100%;
+    max-width: 1200px; /* Ajuste o tamanho máximo do contêiner */
+    padding: 30px; /* Aumente o padding para mais espaço */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    position: relative; /* Necessário para o modal */
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Aumente o espaço inferior */
+}
+
+.header button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px; /* Ajuste o raio do botão */
+    padding: 12px 24px; /* Aumente o padding dos botões */
+    margin: 0 10px; /* Aumente o espaçamento entre os botões */
+    cursor: pointer;
+    font-size: 20px; /* Aumente o tamanho da fonte */
+}
+
+.header button:hover {
+    background-color: #0056b3;
+}
+
+#monthYear {
+    font-size: 28px; /* Aumente o tamanho da fonte do mês e ano */
+    margin: 0 40px; /* Ajuste o espaçamento ao redor */
+}
+
+.weekdays {
+    display: flex;
+    justify-content: space-between;
+    background: #f1f1f1;
+    padding: 15px 0; /* Aumente o padding superior e inferior */
+}
+
+.weekdays div {
+    text-align: center;
+    width: 14.2%; /* Ajuste a largura para mais espaço */
+    font-weight: bold;
+    font-size: 20px; /* Aumente o tamanho da fonte dos dias da semana */
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day {
+    width: 14.2%; /* Ajuste a largura dos dias */
+    text-align: center;
+    padding: 20px; /* Aumente o padding dos dias */
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 20px; /* Aumente o tamanho da fonte dos dias */
+    position: relative; /* Necessário para posicionar o lembrete */
+    min-height: 80px; /* Garante altura mínima para o dia */
+}
+
+.day:hover {
+    background: #f0f0f0;
+}
+
+.day.active {
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+}
+
+/* Estilos do lembrete */
+.day .note {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+    background: #f9f9f9;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    position: absolute;
+    bottom: 5px; /* Ajusta o posicionamento */
+    width: calc(100% - 10px); /* Ajusta a largura do lembrete */
+    box-sizing: border-box;
+    overflow-wrap: break-word; /* Quebra palavras longas */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Ocultar o modal por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    margin: 5% auto; /* Ajuste o posicionamento vertical */
+    padding: 40px; /* Aumente o padding do conteúdo do modal */
+    border-radius: 8px;
+    width: 80%;
+    max-width: 700px; /* Aumente a largura máxima do modal */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 36px; /* Aumente o tamanho da fonte do botão de fechar */
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    height: 150px; /* Aumente a altura da área de texto */
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 15px 30px; /* Aumente o padding do botão */
+    cursor: pointer;
+    font-size: 20px; /* Aumente o tamanho da fonte do botão */
+}
+
+button:hover {
+    background-color: #0056b3;
+}/* Adicione ao seu arquivo de CSS */
+.day {
+    display: inline-block;
+    width: 14%; /* Ajuste conforme o layout do calendário */
+    height: 100px; /* Ajuste conforme o layout do calendário */
+    vertical-align: top;
+    text-align: center;
+    position: relative;
+}
+
+.day-number {
+    line-height: 1.5;
+}
+
+.holiday-day-number {
+    position: relative;
+    top: -10px; /* Ajuste o valor conforme necessário para reposicionar o número */
+    font-weight: bold;
+    color: rgb(81, 113, 255); /* Ajuste a cor conforme o seu design */
+}
+
+.note {
+    margin-top: 5px;
+}
+
+.holiday-note {
+    font-style: italic;
+    color: rgb(85, 105, 255); /* Ajuste a cor conforme o seu design */
+}
+
+
